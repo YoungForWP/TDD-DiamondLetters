@@ -1,41 +1,35 @@
 package com.tw.test;
 
+import com.tw.Letters;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class LetterTest {
-    @Ignore
+
+    private final Letters letters = new Letters();
+
     @Test
     public void test_when_input_is_A() throws Exception {
-        assertEquals("A", output("A"));
+        assertEquals("A", letters.output('A'));
     }
 
-    @Ignore
     @Test
     public void test_when_input_is_B() throws Exception {
-        assertEquals(" A\nB B\n A", output("B"));
+        assertEquals(" A\nB B\n A", letters.output('B'));
     }
 
     @Test
     public void test_when_input_is_C() throws Exception {
-        assertEquals("  A\n B B\nC   C\n B B\n  A", output("C"));
+        assertEquals("  A\n B B\nC   C\n B B\n  A", letters.output('C'));
     }
 
-    private String output(String inputLetter) {
-        if(inputLetter.equals("A")){
-            System.out.print(inputLetter);
-            return inputLetter;
-        }
-        if(inputLetter.equals("B")){
-            System.out.print(" A\nB B\n A");
-            return " A\nB B\n A";
-        }
-        if(inputLetter.equals("C")){
-            System.out.print("  A\n B B\nC   C\n B B\n  A");
-            return "  A\n B B\nC   C\n B B\n  A";
-        }
-        return null;
+    @Test
+    public void test_when_input_is_D() throws Exception {
+        assertEquals("   A\n  B B\n C   C\nD     D\n C   C\n  B B\n   A", letters.output('D'));
     }
+
 }
+
+
