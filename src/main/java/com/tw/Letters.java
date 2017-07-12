@@ -35,12 +35,11 @@ public class Letters {
             if (i == 0) {
                 output.append(generateBlankSpace(index)).append(lettersCollection[i]);
             } else {
-                output.append(lineBreak).append(generateBlankSpace(index - leftSpace))
+                output.append(lineBreak).append(generateBlankSpace(index - leftSpace++))
                         .append(lettersCollection[i])
                         .append(generateBlankSpace(middleSpace))
                         .append(lettersCollection[i]);
                 middleSpace += 2;
-                leftSpace++;
             }
         }
         return output;
