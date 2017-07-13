@@ -29,11 +29,12 @@ public class Letters {
     }
 
     private StringBuilder generateReverseSection(StringBuilder output) {
-        String[] reverse = output.toString().split(lineBreak);
+        StringBuilder result = new StringBuilder(output);
+        String[] reverse = result.toString().split(lineBreak);
         for (int index = reverse.length - 2; index >= 0; index--) {
-            output.append(lineBreak).append(reverse[index]);
+            result.append(lineBreak).append(reverse[index]);
         }
-        return output;
+        return result;
     }
 
     private StringBuilder generateOrderSection(int index, String symbol) {
